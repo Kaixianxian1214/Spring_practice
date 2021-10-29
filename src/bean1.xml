@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置User对象的创建-->
+    <!--<bean id="user" class="SpringDemo1.User"></bean>-->
+
+    <!--set方法注入属性-->
+    <bean id="book" class="SpringDemo1.Book">
+        <!--使用property标签注入属性-->
+        <property name="name" value="Spring5入门"></property>
+        <property name="author" value="尚硅谷"></property>
+        <!--设置null-->
+<!--        <property name="price">-->
+<!--            <null/>-->
+<!--        </property>-->
+        <!--设置特殊字符
+            1、把<>使用转译字符
+            2、把带特殊符号内容写到CDATA
+        -->
+        <property name="price">
+            <value ><![CDATA[<<1234>>]]></value>
+        </property>
+    </bean>
+
+    <!--   有参数构造注入属性  -->
+<!--    <bean id="orders" class="SpringDemo1.Orders">-->
+<!--        <constructor-arg name="name" value="电脑"></constructor-arg>-->
+<!--        <constructor-arg name="address" value="China"></constructor-arg>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;  p命名空间简化  &ndash;&gt;-->
+<!--    <bean id="orders" class="SpringDemo1.Book" p:name="Spring5" p:author="尚硅谷"></bean>-->
+
+</beans>
