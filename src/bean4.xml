@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="orders" class="SpringDemo2.bean.Orders" init-method="initOrders" destroy-method="destroyOrders">
+        <property name="oderName" value="书籍"></property>
+    </bean>
+
+    <!--会为当前xml文件中的bean都添加后置处理器-->
+    <!--配置后置处理器-->
+    <bean id="myBeanPost" class="SpringDemo2.bean.MyBean"></bean>
+</beans>

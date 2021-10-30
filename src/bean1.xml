@@ -12,22 +12,23 @@
         <property name="name" value="Spring5入门"></property>
         <property name="author" value="尚硅谷"></property>
         <!--设置null-->
-<!--        <property name="price">-->
-<!--            <null/>-->
-<!--        </property>-->
+        <!--<property name="price">-->
+        <!--<null/>-->
+        <!--</property>-->
+
         <!--设置特殊字符
             1、把<>使用转译字符
             2、把带特殊符号内容写到CDATA
         -->
         <property name="price">
-            <value ><![CDATA[<<1234>>]]></value>
+            <value><![CDATA[<<1234>>]]></value>
         </property>
     </bean>
 
     <!--   有参数构造注入属性  -->
 <!--    <bean id="orders" class="SpringDemo1.Orders">-->
-<!--        <constructor-arg name="name" value="电脑"></constructor-arg>-->
-<!--        <constructor-arg name="address" value="China"></constructor-arg>-->
+<!--    <constructor-arg name="name" value="电脑"></constructor-arg>-->
+<!--    <constructor-arg name="address" value="China"></constructor-arg>-->
 <!--    </bean>-->
 
 <!--    &lt;!&ndash;  p命名空间简化  &ndash;&gt;-->
