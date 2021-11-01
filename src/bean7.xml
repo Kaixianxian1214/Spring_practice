@@ -9,4 +9,24 @@
     多个包之间使用逗号隔开
         若多个包在同一个目录下，可直接使用父目录，如下中的SpringDemo3-->
     <context:component-scan base-package="SpringDemo3.dao, SpringDemo3.service"></context:component-scan>
+
+    <!--示例1
+    use-default-filter="false" 表示现在不使用默认filter，自己配置filter
+    context:include-filter，设置扫描哪些内容
+    -->
+    <context:component-scan base-package="SpringDemo3" use-default-filters="false">
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!--示例2
+    下面配置扫描包所有内容
+    context:exclude-filter:设置哪些内容不包含
+    -->
+    <context:component-scan base-package="SpringDemo3">
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
 </beans>

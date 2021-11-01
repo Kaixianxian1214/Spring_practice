@@ -14,4 +14,12 @@ public class TestBean {
         UserService userService = context.getBean("userService", UserService.class);
         userService.add();
     }
+
+    @Test // testBean8.xml
+    public void testBean8(){
+        ApplicationContext context =
+                new ClassPathXmlApplicationContext("bean8.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        userService.add();
+    }
 }
