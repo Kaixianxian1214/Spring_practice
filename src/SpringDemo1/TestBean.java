@@ -1,6 +1,5 @@
 package SpringDemo1;
 
-import SpringDemo1.Book;
 import SpringDemo1.bean.Employee;
 import SpringDemo1.service.UserService;
 import org.junit.Test;
@@ -13,7 +12,7 @@ public class TestBean {
     public void testBean1(){
 
         // 1 加载Spring配置文件
-        ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("SpringDemo1/bean1.xml");
 
         // 2 获取配置创建的对象
         Book book = context.getBean("book", Book.class);
@@ -26,7 +25,7 @@ public class TestBean {
     public void testBean2(){
         // 加载Spring配置文件
         ApplicationContext context =
-                new ClassPathXmlApplicationContext("bean2.xml");
+                new ClassPathXmlApplicationContext("SpringDemo1/bean2.xml");
 
         // 获取配置创建的对象
         UserService service = context.getBean("userService", UserService.class);
@@ -37,7 +36,7 @@ public class TestBean {
     @Test // testBean3.xml
     public void testBean3(){
         ApplicationContext context =
-                new ClassPathXmlApplicationContext("bean3.xml");
+                new ClassPathXmlApplicationContext("SpringDemo1/bean3.xml");
         Employee employee = context.getBean("employee", Employee.class);
         employee.print();
     }
