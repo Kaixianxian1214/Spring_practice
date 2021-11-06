@@ -32,12 +32,4 @@ public class TestBean {
         UserService userService = context.getBean("userService", UserService.class);
         userService.add();
     }
-
-    @Test // testConfigClass
-    public void testSpringConfig(){
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext(SpringConfig.class);
-        UserService userService = context.getBean("userService", UserService.class);
-        userService.add();
-    }
 }
