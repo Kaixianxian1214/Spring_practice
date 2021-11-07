@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional(timeout = -1, propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ)      // 添加事务注解
+@Transactional(transactionManager = "transactionManager",timeout = -1, propagation = Propagation.REQUIRED, isolation = Isolation.REPEATABLE_READ)      // 添加事务注解
 public class UserService {
 
     // 注入dao
@@ -18,6 +18,7 @@ public class UserService {
     // 转账的方法
     public  void accountMoney(){
             userDao.reduceMoney();
+            // int i = 10 / 0;
             userDao.addMoney();
     }
 }
